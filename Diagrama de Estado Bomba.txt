@@ -1,0 +1,11 @@
+[Diagrama de Estado Bomba]
+
+
+start
+:Bomba aparece;
+while (Contador <> 0)
+  :Contador = Contador - 1;
+end while
+:Bomba explota;
+:bomba desaparece;
+end

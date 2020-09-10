@@ -1,0 +1,19 @@
+[Diagrama de Estado Bomberman]
+
+
+start
+:Bomberman appears;
+if (Life = 0)
+  :Dies;
+  end
+endif
+fork
+if (Bomberman moves)
+  :Change Position;
+endif
+fork again
+if (Power_up Picked Up)
+  :Change Status;
+endif
+end fork
+stop

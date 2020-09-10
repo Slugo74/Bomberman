@@ -1,0 +1,6 @@
+[Diagrama de Estado Pared Indestructible]
+
+
+start
+:Undestructible Wall Appears;
+stop

@@ -1,0 +1,13 @@
+[Diagrama de Estado Enemigo]
+
+
+start
+:Enemy appears;
+if (HP = 0)
+  :Dies;
+  end
+endif
+if (Enemy moves)
+  :Change Position;
+endif
+stop

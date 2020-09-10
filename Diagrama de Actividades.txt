@@ -1,0 +1,75 @@
+[Diagrama de Actividades]
+
+
+start
+:Game starts;
+while(Level incomplete) is (true)
+:Time = 300;
+:Time = Time - 1;
+if (time = 0) then (false)
+fork
+  :Plant Bomb;
+  :Explosion;
+  if (Explosion touch something) then (true)
+  fork
+  :Enemy;
+    :Lose Life;
+    if (life = 0) then (true)
+      :dead;
+      end
+        else (false)
+       :continue;
+      endif
+  fork again
+  :Wall;
+    if (can be destroyed) then (true)
+      :Wall explote;
+      if (have a powerup) then (true)
+        :powerup appears;
+      endif
+    else (false)
+      :Wall stays;
+    endif
+  fork again
+  :You;
+  :Lose HP;
+  if (HP = 0) then (true)
+    :You died;
+    :Lose level;
+    end
+    else (false)
+  endif
+end fork
+  else (false)
+  endif
+fork again
+  :Move;
+  fork
+  :Move left;
+  fork again
+  :Move right;
+  fork again
+  :Move up;
+  fork again
+  :Move down;
+  end fork
+if (touch enemy) then (true)
+  :HP = HP - 50;
+if (HP = 0) then (true)
+  :Lose level;
+  end 
+else (false)
+endif
+else (false)
+endif
+fork again
+  :Pick power up;
+    :Apply power up;
+end fork
+else (true)
+:lose level;
+end
+endif
+endwhile (false)
+:Level complete;
+stop

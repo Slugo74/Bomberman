@@ -1,0 +1,13 @@
+[Diagrama de Secuencia Menu]
+
+
+autonumber
+activate User
+User -> Game: startGame()
+activate Game
+Game -> User: giveMenu()
+deactivate Game
+User -> Game: play()
+activate Game
+Game -> User: showGame()
+

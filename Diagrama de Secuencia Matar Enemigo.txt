@@ -1,0 +1,41 @@
+[Diagrama de Secuencia Matar Enemigo]
+
+
+autonumber
+activate User
+activate Game
+Game -> Bomberman: spawn()
+activate Bomberman
+Bomberman -> Game: spawnOk()
+deactivate Bomberman
+Game -> Enemy: spawn()
+activate Enemy
+Enemy -> Game: spawnOk()
+User -> Game: pressLeftKey()
+Game -> Bomberman: moveLeft()
+activate Bomberman
+Bomberman -> Bomberman: movingLeft()
+User -> Game: pressSpaceBar()
+deactivate Bomberman
+Game -> Bomberman: plantBomb()
+activate Bomberman
+Bomberman -> Bomberman: plantingBomb()
+Bomberman -> Game: bombPlanted()
+deactivate Bomberman
+Game -> Bomb: spawn()
+activate Bomb
+Bomb -> Game: spawnOk()
+User -> Game: pressRightKey()
+Game -> Bomberman: moveRight()
+activate Bomberman
+Bomberman -> Bomberman: movingRight()
+Bomb -> Game: explotion()
+deactivate Bomberman
+Game -> Bomb: despawn()
+deactivate Bomb
+Game -> Enemy: damage()
+Enemy-> Enemy: reduceHp()
+Enemy -> Game: noHp()
+Game -> Enemy: despawn()
+deactivate Enemy
+Game -> User: showResults()

@@ -1,0 +1,27 @@
+[Diagrama de Caso de Uso]
+
+
+actor Player
+rectangle Sistem {
+rectangle Power_ups {
+Player -down-> (Visible)
+Player -down-> (pick up)
+}
+rectangle Enemies {
+Player -down-> (Visibles)
+}
+rectangle Bombs {
+Player -down-> (Drop them)
+Player -down-> (visibles)
+}
+rectangle Walls {
+Player -down-> (visible)
+Player -down-> (Destroy)
+}
+rectangle Movement {
+Player -down-> (Move left)
+Player -down-> (Move right)  
+Player -down-> (Move down)
+Player -down-> (Move up)
+}
+

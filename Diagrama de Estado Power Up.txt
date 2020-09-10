@@ -1,0 +1,10 @@
+[Diagrama de estado Power Up]
+
+
+start
+:Power_Up Appears;
+if (Picked Up = True)
+  :Power_Up disappears;
+  end
+endif
+stop

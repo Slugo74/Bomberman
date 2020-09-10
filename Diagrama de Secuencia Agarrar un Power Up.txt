@@ -1,0 +1,63 @@
+[Diagrama de Secuencia Agarrar un Power Up]
+
+
+autonumber
+activate User
+activate Game
+Game -> Bomberman: spawn()
+activate Bomberman
+Bomberman -> Game: spawnOk()
+deactivate Bomberman
+Game -> dWall: spawn()
+activate dWall
+dWall -> Game: spawnOk()
+deactivate dWall
+Game -> powerUp: spawn()
+activate powerUp
+powerUp-> Game: spawnOk()
+deactivate powerUp
+User -> Game: pressLeftKey()
+Game -> Bomberman: moveLeft()
+activate Bomberman
+Bomberman -> Bomberman: movingLeft()
+User -> Game: pressSpaceBar()
+deactivate Bomberman
+Game -> Bomberman: plantBomb()
+activate Bomberman
+Bomberman -> Bomberman: plantingBomb()
+Bomberman -> Game: bombPlanted()
+deactivate Bomberman
+Game -> Bomb: spawn()
+activate Bomb
+Bomb -> Game: spawnOk()
+User -> Game: pressRightKey()
+Game -> Bomberman: moveRight()
+activate Bomberman
+Bomberman -> Bomberman: movingRight()
+Bomb -> Game: explotion()
+deactivate Bomberman
+Game -> Bomb: despawn()
+deactivate Bomb
+Game -> dWall: damage()
+activate dWall
+dWall -> dWall: reduceHp()
+dWall -> Game: noHp()
+Game -> dWall: despawn()
+deactivate dWall
+Game -> powerUp: visible()
+activate powerUp
+powerUp -> Game: visibleOk()
+deactivate powerUp
+User -> Game: pressLeftKey()
+Game -> Bomberman: moveLeft()
+activate Bomberman
+Bomberman -> Bomberman: movingLeft()
+Bomberman -> Game: pickedPowerUp()
+Game -> powerUp: modify()
+activate powerUp
+powerUp -> Game: modifyVelocity()
+Game -> powerUp: despawn()
+deactivate powerUp
+Game -> Bomberman: modifyVelocity()
+deactivate Bomberman
+Game -> User: showResults()

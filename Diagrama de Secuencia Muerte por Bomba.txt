@@ -1,0 +1,24 @@
+[Diagrama de Secuencia Muerte por Bomba]
+
+
+activate User
+activate Game
+Game -> Bomberman: Spawn()
+User -> Game: spaceKey()
+Game -> Bomberman: plantBomb()
+activate Bomberman
+Bomberman -> Bomb: plantBomb()
+deactivate Bomberman
+activate Bomb
+Bomb -> Game: Spawn((int, int))
+Bomb -> Bomb: endTimeBomb
+Bomb -> Game: explosion()
+Bomb -> Game: despawn()
+deactivate Bomb
+Game -> Bomberman: damage()
+activate Bomberman
+Bomberman -> Bomberman: LoseLife(int)
+Bomberman -> Game: despawn()
+deactivate Bomberman
+Game -> User: showResults()
+deactivate Game

@@ -1,0 +1,104 @@
+[Diagrama de Clase]
+
+
+class Game{
+  +
+}
+class Map{
+  Time
+  Lenght
+}
+abstract class Character{
+  Bomb
+  Life
+  Speed
+  Position
+  Punch
+  +moveRight()
+  +moveLeft()
+  +moveUp()
+  +moveDown()
+  +plantBomb()
+  +damage()
+  +pickUpPowerup()
+  +setAtribute()
+}
+
+class Player{
+}
+
+class Enemy{
+}
+
+class Bomb{
+  Time
+  Range
+  DestructionWall
+  +damage()
+  +damageWall()
+  +explote()
+  +setRange()
+  +setDestruction()
+}
+
+abstract class Wall{
+  +life()
+  +disappear()
+  
+} 
+class Breakable{
+  +life()
+  +disapear()
+  +powerUp()
+}
+
+class Unbreakable{
+  +life()
+  +disapear()
+}
+
+abstract class PowerUp{
+  visible
+  +spawn()
+  +visible()
+  +active()
+  +Modify()
+}
+class PSpeed {
+  +Modify()
+}
+class PRange{
+  +Modify()
+}
+class PBomb{
+  +Modify()
+}
+class PDestruction{
+  +Modify()
+}
+class PPunch{
+  +Modify()
+}
+class PLife{
+  +Modify()
+}
+class PTime{
+  +Modify()
+}
+
+Wall <|--- Breakable
+Wall <|--- Unbreakable
+
+Character <|--- Player
+Character <|--- Enemy
+
+PowerUp <|--- PSpeed
+PowerUp <|--- PRange
+PowerUp <|--- PPunch
+PowerUp <|--- PLife
+PowerUp <|--- PTime
+PowerUp <|--- PBomb
+PowerUp <|--- PDestruction
+Game --- Map
+Game --- Character
+Game --- Bomb

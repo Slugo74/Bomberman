@@ -1,0 +1,9 @@
+[Diagrama de Estado de Pared Destructible]
+
+start
+:Destructible Wall Appears;
+if (Life = 0)
+  :Destructable Wall disappears;
+  end 
+endif
+stop
